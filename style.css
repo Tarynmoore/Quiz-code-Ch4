@@ -6,13 +6,13 @@ header {
     display: block;
     float: left;
     font-size: 55px;
-    margin-left: 6em;
+    margin-left: 4em;
     margin-top: 40px;  
     margin-bottom: 15px;
     padding: 8px; 
 }
 
-#countdown {
+.countdown {
     margin: 10px;
     font-size: 20px;
     display: flex;
@@ -29,6 +29,11 @@ header {
    cursor: pointer;
    margin-bottom: 15px;
 }
+
+section {
+    display: block;
+    justify-content: center;
+ }
 
 main {
     margin-top: 20px;
@@ -60,8 +65,13 @@ ol {
     margin-bottom: 5px;
 }
 
+.score {
+    font-size: 20px;
+}
 
-input {
+section {
+    margin-left: 35em;
+    padding-top: 18em;
     width: 40%;
     height: 20%;
 }
@@ -69,3 +79,4 @@ input {
 .hide {
     display: none;
 }
+

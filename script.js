@@ -1,6 +1,6 @@
 var start = document.querySelector(".start");
 var startGame = document.querySelector(".hide");
-var countdownEl = document.querySelector("#countdown"); 
+var countdownEl = document.querySelector(".countdown"); 
 var questionEl = document.querySelector(".question");
 var titleEl = document.querySelector("#title");
 var choicesEl = document.querySelectorAll(".choices");
@@ -9,8 +9,6 @@ var scoreEl = document.querySelector(".score");
 var userNameEl = document.querySelector(".userName");
 var submitEl = document.querySelector(".submit");
 var displayEl = document.querySelector(".display");
-
-var playerScore = 0;
 
 var questions = [{
     title: "Who founded the Red Cross?", 
@@ -32,12 +30,18 @@ var questions = [{
 
 console.log(questions);
 
-var timeRemaining = questions.length * 10;
+var timeRemaining = questions.length * 15;
 var timerId;
 var index = 0;
 
 function countdown() {
-    countdownEl.textContent = "Time Remaining:" + timeRemaining--
+    countdownEl.classList.remove("hide")
+    countdownEl.textContent = "Time Remaining: " + timeRemaining--
+    if (timeRemaining <= 0 ) {
+        questionEl.classList.add("hide")
+        clearInterval(timerId)
+        displayScore()
+    }
 }
 
 function displayQuestions() {
@@ -49,6 +53,13 @@ function displayQuestions() {
 }
 console.log(displayQuestions);
 
+function answers() {
+    answerEl[0].textContent === questions[index].answer[0]
+    answerEl[1].textContent === questions[index].answer[1]
+    answerEl[2].textContent === questions[index].answer[2]
+    answerEl[3].textContent === questions[index].answer[3]
+}
+
 function nextquestion() {
     index++
     if (index < questions.length) {
@@ -57,56 +68,60 @@ function nextquestion() {
         clearInterval(timerId) 
         questionEl.classList.add("hide")
         displayScore()     
-
-    }
+    }       
 }
 
-choicesEl[0].addEventListener("click", nextquestion);
-choicesEl[1].addEventListener("click", nextquestion);
-choicesEl[2].addEventListener("click", nextquestion);
-choicesEl[3].addEventListener("click", nextquestion); 
-
+function userQuestions() {
+    choicesEl[0].addEventListener("click", nextquestion);
+    choicesEl[1].addEventListener("click", nextquestion);
+    choicesEl[2].addEventListener("click", nextquestion);
+    choicesEl[3].addEventListener("click", nextquestion); 
+}
+userQuestions();
 
 
 function renderQuestions() {
     timerId = setInterval(countdown, 1000); 
-    questionEl. classList.remove("hide")
+    questionEl.classList.remove("hide")
     displayQuestions();    
 }
 
+
+
 start.addEventListener("click", renderQuestions);
-
-
-function answers() {
-   answerEl[0].textContent = questions[index].answer[0]
-   answerEl[1].textContent = questions[index].answer[1]
-   answerEl[2].textContent = questions[index].answer[2]
-   answerEl[3].textContent = questions[index].answer[3]
-}
-
-function wrongAnswer() {
-    
-} 
 
 console.log(answers);
 
-function highScore() {
-    if (playerScore === answers) {
-    playerScore++
-    } else {
-        playerScore--
-    }
+function displayScore() {
+    displayEl.classList.remove("hide")
+    countdownEl.classList.add("hide")
+    scoreEl.textContent = "Your High Score is: " + timeRemaining + "Enter a username"
 }
 
-function displayScore() {       
-        scoreEl.classList.remove("hide")
-        displayEl.textContent = "Your Score is " + highScore + "!" 
-        }
+
+
+
+
+
+function wrongAnswer() {
+   
+}
+
+// var highScore = querySelector
+// function displayScore() {       
+//     displayEl.classList.remove("hide")
+
+//     }
    
 
 
 //    if (questions.length < displayQuestions) {
 //     displayScore();
+
+// if (userQuestions != answers) {
+//     timeRemaining -=5
+// }
+
 
 
 
