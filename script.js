@@ -6,9 +6,12 @@ var titleEl = document.querySelector("#title");
 var choicesEl = document.querySelectorAll(".choices");
 var answerEl = document.querySelectorAll(".answer");
 var scoreEl = document.querySelector(".score");
-var userNameEl = document.querySelector(".userName");
+var userIntEl = document.querySelector(".userInt");
 var submitEl = document.querySelector(".submit");
 var displayEl = document.querySelector(".display");
+var scoreBoardEl = document.querySelector(".scoreBoard");
+var userEntryEl = document.querySelector(".userEntry"); 
+var userScoreEl = document.querySelector(".userScore")
 
 var questions = [{
     title: "Who founded the Red Cross?", 
@@ -86,17 +89,33 @@ function renderQuestions() {
     displayQuestions();    
 }
 
-
-
 start.addEventListener("click", renderQuestions);
 
 console.log(answers);
 
+
+
 function displayScore() {
     displayEl.classList.remove("hide")
     countdownEl.classList.add("hide")
-    scoreEl.textContent = "Your High Score is: " + timeRemaining + "Enter a username"
+    scoreEl.textContent = "Your High Score is: " + timeRemaining + " Enter initials"
+    // userIntEl.value = userEntryEl
+    userScoreEl.textContent = timeRemaining
 }
+
+// localStorage.setItem("userIntEl", JSON.stringify(userEntryEl));
+// localStorage.getItem("userEntryEl") 
+// localStorage.setItem("timeRemaining", JSON.stringify(userScoreEl));
+
+function scoreBoard() { 
+    displayEl.classList.add("hide")
+    scoreBoardEl.classList.remove("hide")
+    scoreBoardEl.textContent = "High Score: " + timeRemaining + " By: " + userIntEl.value 
+}
+
+submitEl.addEventListener("click", scoreBoard)
+
+
 
 
 

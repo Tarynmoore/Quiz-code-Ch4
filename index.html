@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <title>Test Your Knowledge</title>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" type="text/css" href="./style.css" />
 
-    </head>
-  <body>
-      <header> 
-        <div class="header">Are you smarter than a 5th grader?</div> 
+<head>
+    <title>Test Your Knowledge</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+
+</head>
+
+<body>
+    <header>
+        <div class="header">Are you smarter than a 5th grader?</div>
         <button class="start">Start</button>
         <p class="hide countdown"></p>
-      </header>
+    </header>
 
-      <main class="hide question">
-        <div> 
+    <main class="hide question">
+        <div>
             <h2 id="title"></h2>
             <ol>
                 <li><button class="choices answer"></button></li>
                 <li><button class="choices answer"></button></li>
                 <li><button class="choices answer"></button></li>
                 <li><button class="choices answer"></button></li>
-            </ol>       
+            </ol>
         </div>
-        
+
     </main>
-    <div> 
+    <div>
         <section class="hide display">
             <h3 class="score"></h3>
-        <input type="text" class="userName">
-        <button class="submit">Submit</button>
-    </section>
-
+            <input class="userInt"></input>
+            <button class="submit">Submit</button>
+        </section>
     </div>
-        
+    <div>
+        <section class="hide scoreBoard">
+            <p class="userEntry userScore"></p>
+        </section>
+    </div>
+    </div>
+
 
     <script src="./script.js"></script>
-  </body>
+</body>
 
 </html>

@@ -76,6 +76,10 @@ section {
     height: 20%;
 }
 
+textarea {
+    
+}
+
 .hide {
     display: none;
 }
