@@ -72,6 +72,9 @@ function nextquestion() {
         questionEl.classList.add("hide")
         displayScore()     
     }       
+    if (userQuestions != answers) {
+        timeRemaining-= 5
+    }
 }
 
 function userQuestions() {
@@ -79,6 +82,7 @@ function userQuestions() {
     choicesEl[1].addEventListener("click", nextquestion);
     choicesEl[2].addEventListener("click", nextquestion);
     choicesEl[3].addEventListener("click", nextquestion); 
+    
 }
 userQuestions();
 
@@ -90,6 +94,7 @@ function renderQuestions() {
 }
 
 start.addEventListener("click", renderQuestions);
+
 
 console.log(answers);
 

@@ -1,5 +1,6 @@
 * {
     font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    background-color: rgb(245,222,179);
 }
 
 header {
@@ -23,7 +24,7 @@ header {
    display: block;
    float: right;
    padding: 10px 15px 10px 15px;
-   background-color: rgb(230, 69, 69);
+   background-color: rgb(205,133,63);
    font-size: 30px;
    border-radius: 10px;
    cursor: pointer;
@@ -41,7 +42,7 @@ main {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;  
-    outline: 4px dashed rgb(230, 69, 69);
+    outline: 4px dashed rgb(139,69,19);
     padding: 10px 30px 10px 30px;
     width: 60%;
 }
@@ -56,6 +57,7 @@ ol {
 }
 
 .choices {
+    background-color: rgb(205,133,63);
     padding-top: 10px;
     padding-bottom: 10px; 
     width: 50%;
@@ -70,13 +72,25 @@ ol {
 }
 
 section {
-    margin-left: 35em;
-    padding-top: 18em;
+    display: inline-block;
+    
+    margin-left: 30%;
+    padding-top: 5px 10px 5px 10px;
     width: 40%;
     height: 20%;
+    
 }
 
-textarea {
+input {
+    height: 30%;
+}
+
+.submit {
+    background-color: rgb(205,133,63);
+}
+
+.scoreBoard {
+    font-size: 20px;
     
 }
 
