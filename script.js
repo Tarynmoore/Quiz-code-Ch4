@@ -1,11 +1,16 @@
+// Start game variables 
 var start = document.querySelector(".start");
 var startGame = document.querySelector(".hide");
 var countdownEl = document.querySelector(".countdown"); 
 var questionEl = document.querySelector(".question");
+
+// Questions variables 
 var titleEl = document.querySelector("#title");
 var choicesEl = document.querySelectorAll(".choices");
 var answerEl = document.querySelectorAll(".answer");
 var scoreEl = document.querySelector(".score");
+
+// Scoreboard variables 
 var userIntEl = document.querySelector(".userInt");
 var submitEl = document.querySelector(".submit");
 var displayEl = document.querySelector(".display");
@@ -37,6 +42,7 @@ var timeRemaining = questions.length * 15;
 var timerId;
 var index = 0;
 
+// Sets the timer restraints
 function countdown() {
     countdownEl.classList.remove("hide")
     countdownEl.textContent = "Time Remaining: " + timeRemaining--
@@ -63,6 +69,7 @@ function answers() {
     answerEl[3].textContent === questions[index].answer[3]
 }
 
+// Get to the next question. 
 function nextquestion() {
     index++
     if (index < questions.length) {
@@ -77,6 +84,7 @@ function nextquestion() {
     }
 }
 
+// How to get to the next questions 
 function userQuestions() {
     choicesEl[0].addEventListener("click", nextquestion);
     choicesEl[1].addEventListener("click", nextquestion);
@@ -84,9 +92,10 @@ function userQuestions() {
     choicesEl[3].addEventListener("click", nextquestion); 
     
 }
+
 userQuestions();
 
-
+// How to choose the questions
 function renderQuestions() {
     timerId = setInterval(countdown, 1000); 
     questionEl.classList.remove("hide")
@@ -95,22 +104,15 @@ function renderQuestions() {
 
 start.addEventListener("click", renderQuestions);
 
-
 console.log(answers);
 
-
-
+// How to get the score to display 
 function displayScore() {
     displayEl.classList.remove("hide")
     countdownEl.classList.add("hide")
     scoreEl.textContent = "Your High Score is: " + timeRemaining + " Enter initials"
-    // userIntEl.value = userEntryEl
     userScoreEl.textContent = timeRemaining
 }
-
-// localStorage.setItem("userIntEl", JSON.stringify(userEntryEl));
-// localStorage.getItem("userEntryEl") 
-// localStorage.setItem("timeRemaining", JSON.stringify(userScoreEl));
 
 function scoreBoard() { 
     displayEl.classList.add("hide")
@@ -119,35 +121,4 @@ function scoreBoard() {
 }
 
 submitEl.addEventListener("click", scoreBoard)
-
-
-
-
-
-
-
-
-function wrongAnswer() {
-   
-}
-
-// var highScore = querySelector
-// function displayScore() {       
-//     displayEl.classList.remove("hide")
-
-//     }
-   
-
-
-//    if (questions.length < displayQuestions) {
-//     displayScore();
-
-// if (userQuestions != answers) {
-//     timeRemaining -=5
-// }
-
-
-
-
-
 
