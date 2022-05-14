@@ -1,4 +1,9 @@
 Are You Smarter Than a 5th Grader?
+
+https://github.com/Tarynmoore/Quiz-code-Ch4
+https://tarynmoore.github.io/Quiz-code-Ch4/
+
+
 <img width="1440" alt="Screen Shot 2022-05-14 at 12 52 44 PM" src="https://user-images.githubusercontent.com/101439331/168444771-b7d996c1-c9f2-4d55-b23e-db1c866c41b5.png">
 
 
